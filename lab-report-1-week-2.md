@@ -1,4 +1,4 @@
-# Lab Report Week 2: Loggings into an account on ieng6 
+# Lab Report Week 2: Loggings into an account on `ieng6`
 
 ## Installing VSCode 
 
@@ -22,4 +22,34 @@ $ ssh cse15lwi22aaw@ieng6.ucsd.edu
 ![Image](images/sshworking.png)
 
 ---
+
+## Trying a few commands 
+* Here are a few commands that I tried once I logged into the server. 
+```
+cd ~
+cd 
+ls -a
+ls -lat
+```
+
+![Image](images/try_out_linux_commands.png)
+* based on the output, I've concluded that `cd ~` and `cd ` will return to the root directory (which I was already in in the following screenshot), `ls -lat` will display all the folders abd files with timestamps and extra information of the current directory, and `ls -a` displays all directories that begin with a **.** or a **..**. 
+
+---
+
+## Moving Files With `scp`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
