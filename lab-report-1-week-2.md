@@ -2,7 +2,7 @@
 
 ## Installing VSCode 
 
-![Image](images/vscode_open)
+![Image](images/vscode_open.png)
 * VSCode is a code editor that will make you life easier. Install VScode [here](https://code.visualstudio.com/). 
 * Once you download VSCode, open VSCode. The open page should look something like the image above. 
 
