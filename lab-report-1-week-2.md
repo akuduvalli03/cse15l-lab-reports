@@ -15,7 +15,7 @@
 ```
 $ ssh cse15lwi22aaw@ieng6.ucsd.edu
 ```
-* follow the prompts (answer yes) and then you will be promted to enter in you password. It is you ucsd login password. 
+* follow the prompts (answer yes) and then you will be promted to enter in you password. It is your ucsd login password. 
 * You output should be similar to this image--if so, you have connected to the server!
 
 
