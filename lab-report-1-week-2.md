@@ -78,6 +78,10 @@ Now you can log in without your password like this:
 
 ## Optimizing Remote Running 
 
+![Image](images/shortcut.png)
+
+* Now that we can log into the server without having to enter our password, we can explore even more shortcuts! For Example, the one above is a way to run commands without having to log in the the server first and then run a separate command. 
+
 
 
 
