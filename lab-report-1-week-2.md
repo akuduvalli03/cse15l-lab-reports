@@ -1,4 +1,4 @@
-# Lab Report Week 2: Loggings into an account on `ieng6`
+# Lab Report Week 2: Logging into an account on `ieng6`
 
 ## Installing VSCode 
 
@@ -48,6 +48,7 @@ ls -lat
 * the program `whereami.java` prints the a few properties: the **os** that the program runs on, the **name** of the user, the **home** of the user, and the current **directory**. 
 * We can visibly see the difference between running the program on the client side vs. server side. 
 client side:
+
 ```
 Mac OS X
 AksharaKuduvalli
@@ -55,6 +56,7 @@ AksharaKuduvalli
 /Users/AksharaKuduvalli/Desktop/JavaProjects/cse15l
 
 ```
+
 server side: 
 ![Image](images/server_whereami.png)
 
@@ -71,6 +73,11 @@ Now you can log in without your password like this:
 
 
 ![Image](images/nopass.png)
+
+---
+
+## Optimizing Remote Running 
+
 
 
 
