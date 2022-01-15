@@ -47,6 +47,7 @@ ls -lat
 * I am prompted for my password, but then the file is saved on the server!
 * the program `whereami.java` prints the a few properties: the **os** that the program runs on, the **name** of the user, the **home** of the user, and the current **directory**. 
 * We can visibly see the difference between running the program on the client side vs. server side. 
+
 client side:
 
 ```
@@ -65,10 +66,12 @@ server side:
 ## Setting an ssh key
 * when you create an ssh key, a public and private key are created. if we copy the public key onto the server, then we are able to log on to the server without needing to enter in a password
 * First: run the command `$ ssh-keygen`, then save the the keys in whichever folder you want. Then, run the following command (with your own info) to save the public key onto the sever:
+
 ```
 $ scp /Desktop/javaprojects/.ssh/id_rsa.pub cs15lwi22aaw@ieng6.ucsd.edu:~/.ssh/authorized_keys
 
 ```
+
 Now you can log in without your password like this: 
 
 
