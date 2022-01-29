@@ -85,6 +85,14 @@ Now you can log in without your password like this:
 
 * Now that we can log into the server without having to enter our password, we can explore even more shortcuts! For Example, the one above is a way to run commands without having to log in the the server first and then run a separate command. 
 
+* Another way to optimize our remote running is through the **up arrow** keystroke, which will automatically enter in your previous command (or more previous, depending on how many times you press the up arrow), so that you don't have to type out the whole command over again. 
+
+* Also, adding a semicolon to the end of your command allows you to enter multiple commands in one line to save time—for example, if I wanted to run and compile a program named MyProg.java, I could do that in one line like this:
+```
+$ javac MyProg.java; java MyProg
+
+```
+* Furthermore, using our up arrow shortcut, if I wanted to run the above commands multiple times, if I used the up arrow instead of typing it out, My keystrokes number would be reduced from *30* to *just 1*. 
 
 
 
