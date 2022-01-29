@@ -93,6 +93,7 @@ Now you can log in without your password like this:
 $ javac MyProg.java; java MyProg
 
 ```
+
 * Furthermore, using our up arrow shortcut, if I wanted to run the above commands multiple times, if I used the up arrow instead of typing it out, My keystrokes number would be reduced from *30* to *just 1*. 
 
 
