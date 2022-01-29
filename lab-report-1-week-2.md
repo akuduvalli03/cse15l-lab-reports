@@ -88,6 +88,7 @@ Now you can log in without your password like this:
 * Another way to optimize our remote running is through the **up arrow** keystroke, which will automatically enter in your previous command (or more previous, depending on how many times you press the up arrow), so that you don't have to type out the whole command over again. 
 
 * Also, adding a semicolon to the end of your command allows you to enter multiple commands in one line to save time—for example, if I wanted to run and compile a program named MyProg.java, I could do that in one line like this:
+
 ```
 $ javac MyProg.java; java MyProg
 
