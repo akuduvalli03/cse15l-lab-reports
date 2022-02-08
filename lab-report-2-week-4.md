@@ -25,8 +25,8 @@ markdown = markdown.replace(")(","](");
 
 
 ## Error 2: Links where I used parentheses again, except now I switch the open and close parentheses
-
-![Image](images/onlyparen.png)
+![Image](images/changes_error2.png)
+![Image](images/added_method_error2.png)
 * The test file that prompted me to make this change was [this file](testcase2.md) where I switched the parentheses such that the open parentheses encloses the end of the link name, and the close parentheses encolses the beginning. 
 
 * the output without fixing the mistake looks like this (when it fails):
