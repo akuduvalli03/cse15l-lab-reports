@@ -30,7 +30,7 @@ markdown = markdown.replace(")(","](");
 * The test file that prompted me to make this change was [this file](testcase2.md) where I switched the parentheses such that the open parentheses encloses the end of the link name, and the close parentheses encolses the beginning. 
 
 * the output without fixing the mistake looks like this (when it fails):
-![Image](images/extraparen.png)
+![Image](images/extra_paren.png)
 * As shown above, without fixing the error, even though the program compliles and runs without any exceptions, it treats the open parentheses of the link as being part of the link text (the *symptom* of the failure inducing input), so we can still consider this a bug, even though on the surface it might seem like the program works. But just because a program compiles and runs doesn't mean it is not error-prone, which is why extensive testing is important. 
 
 * The **bug** is that the program immediately assumes that the link label will be enclosed by an opener, then a closer, whether that be parentheses or brackets. Given that people will always find a way to create more problems, it does not account for the fact that the link label could be enclosed by the opposite bracket or parentheses, respectively. The symptom, the extra parentheses in the link, is caused by the fact that in the following lines: 
