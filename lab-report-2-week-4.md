@@ -41,7 +41,7 @@ markdown = markdown.replace(")(","](");
 
 ```
 
-```java
+java
 int nextOpenBracket = markdown.indexOf("[", currentIndex);
 int nextCloseBracket = markdown.indexOf("]", nextOpenBracket);
 ```
@@ -73,3 +73,38 @@ public static int indexOfTheFollowing(String str, int start) {
 
 * This method searches for any of the following `( ) [ ]` as either the open or closing encloser for the link label so that even if you switch the parentheses, the program still works. I also removed the change I made earlier because it is no longer needed. 
 * Furthermore, I changed the starting index (+1) that the indexOf searches for so that it would not be stuck on the same index over and over, since now any of the `linkLabelEnclosers` contents could be considered for the open and close. Now the program runs successfully. 
+
+## Error 3: Not using parentheses for enclosing the **link**
+![Image](images/fixerr3.png)
+
+* * The test file that prompted me to make this change was [this file](testcase3.md) where I enclosed the actual link with something other than the expected open and close parentheses. 
+
+* the output without fixing the mistake looks like this (when it fails):
+![Image](images/error3-infinite.png)
+* As shown above, without fixing the error, the original program would result in an infinite loop. This is the *symptom* of the failure inducing input, but it is not the source of the issue. 
+
+* The **bug** is that the original program only does the "flexible" open and close parentheses/brackets accomodation for the link label, and not necessesarily for the things enclosing the actual link. The reason that it results in an infinite loop is because of this statement in the code:
+
+```java
+int openParen = markdown.indexOf("(", nextCloseBracket+1);
+int closeParen = markdown.indexOf(")", openParen+1);
+```
+
+* where the program is looking for the open and close parentheses to enclose the link that do not exist in this failure inducing input. Because the while loop's condition depends on `currentIndex` incrementing, when `closeParen` yields `-1` in the following line: 
+
+```java
+currentIndex = closeParen + 1;
+```
+
+* current index is not incremented properly, thus resulting in the infinite loop, the *symptom* of the bug caused by the failure inducing input. 
+* to fix this error, I can simply replace the `indexOf` statements for `openParen` and `closeParen` with the method that I created earlier, `indexOfTheFollowing` :
+
+```java
+int openParen = indexOfTheFollowing(markdown, nextCloseBracket+1);
+int closeParen = indexOfTheFollowing(markdown, openParen+1);
+```
+
+* after which the program compiles and runs successfully. 
+
+
+
