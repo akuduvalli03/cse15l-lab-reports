@@ -3,7 +3,7 @@
 ## Error 1: Links using only parentheses
 
 ![Image](images/onlyparen.png)
-* The test file that prompted me to make this change was [this file](testcase1.md) where the label for the link also used parentheses instead of open and close brackets. 
+* The test file that prompted me to make this change was [this file](https://github.com/akuduvalli03/markdown-parse/blob/main/testfiles/test-case1.md) where the label for the link also used parentheses instead of open and close brackets. 
 
 * the output without fixing the mistake looks like this (when it fails):
 ![Image](images/infiniteloop.png)
@@ -27,7 +27,7 @@ markdown = markdown.replace(")(","](");
 ## Error 2: Links where I used parentheses again, except now I switch the open and close parentheses
 ![Image](images/changes_error2.png)
 ![Image](images/added_method_error2.png)
-* The test file that prompted me to make this change was [this file](testcase2.md) where I switched the parentheses such that the open parentheses encloses the end of the link name, and the close parentheses encolses the beginning. 
+* The test file that prompted me to make this change was [this file](https://github.com/akuduvalli03/markdown-parse/blob/main/testfiles/test-case2.md) where I switched the parentheses such that the open parentheses encloses the end of the link name, and the close parentheses encloses the beginning. 
 
 * the output without fixing the mistake looks like this (when it fails):
 ![Image](images/extra_paren.png)
@@ -77,7 +77,7 @@ public static int indexOfTheFollowing(String str, int start) {
 ## Error 3: Not using parentheses for enclosing the **link**
 ![Image](images/fixerr3.png)
 
-* * The test file that prompted me to make this change was [this file](testcase3.md) where I enclosed the actual link with something other than the expected open and close parentheses. 
+* * The test file that prompted me to make this change was [this file](https://github.com/akuduvalli03/markdown-parse/blob/main/testfiles/test-case3.md) where I enclosed the actual link with something other than the expected open and close parentheses. 
 
 * the output without fixing the mistake looks like this (when it fails):
 ![Image](images/error3-infinite.png)
