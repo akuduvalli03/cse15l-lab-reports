@@ -39,9 +39,8 @@ markdown = markdown.replace(")(","](");
 markdown = markdown.replace(")(","](");
 ```
 
-```
+```java
 
-java
 int nextOpenBracket = markdown.indexOf("[", currentIndex);
 int nextCloseBracket = markdown.indexOf("]", nextOpenBracket);
 ```
