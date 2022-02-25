@@ -48,7 +48,7 @@ java.lang.AssertionError: expected:<[google.com, google.com, ucsd.edu]> but was:
 
 * I think that for code snippets the `getLinks()` method could check for backticks separately so that the links can still be read properly without having an error. There could be a precedence for deciding what should be considered a link/link label/code block. Based out the output on commonmark, I think that when the text is inside the parentheses that correspond to a link, that it does not look at the backticks being a part of a code block. But when it is in the brackets that are for the link label, then the code block takes precedence such that it the link label could be in the code block style. 
 
-## Snippet 2: Backticks
+## Snippet 2: Nested Links
 
 * the code should produce the following list:
 
