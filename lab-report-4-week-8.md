@@ -93,9 +93,55 @@ java.lang.AssertionError: expected:<[a.com, a.com(()), example.com]> but was:<[a
 
 ```
 
-* I think that this error could be fixed if links were only terated as embedded links if they had the link label enclosed before it, otherwise it should just skip over the link if it is does not have the label. Also, when inside the link text, to take the outermost enclosing parentheses as being the encloser to the link instead of the first encloser that the program encounters. 
+* I think that this error could be fixed if links were only treated as embedded links if they had the link label enclosed before it, otherwise it should just skip over the link if it is does not have the label. Also, when inside the link text, to take the outermost enclosing parentheses as being the encloser to the link instead of the first encloser that the program encounters. 
 
 
+## Snippet 3: Multiple Line Links
+
+* the code should produce the following list:
+
+```java
+["https://ucsd-cse15l-w22.github.io/"]
+```
+
+* test in `MarkdownParseTest.java`:
+
+```java
+@Test
+    public void testLabFile3() throws IOException {
+        Path fileName = Path.of("testfiles/labtest3.md");
+        String contents = Files.readString(fileName);
+        assertEquals(List.of("https://ucsd-cse15l-w22.github.io/"), MarkdownParse3.getLinks(contents));
+    }
+```
+
+* My group's implementation's output:
+
+```
+testLabFile3(MarkdownParseTest)
+java.lang.AssertionError: expected:<[https://ucsd-cse15l-w22.github.io/]> but was:<[https://www.twitter.com, https://www.twitter.com, https://ucsd-cse15l-w22.github.io/, https://ucsd-cse15l-w22.github.io/, github.com, that., https://cse.ucsd.edu/, https://cse.ucsd.edu/]>
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.failNotEquals(Assert.java:835)
+	at org.junit.Assert.assertEquals(Assert.java:120)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at MarkdownParseTest.testLabFile3(MarkdownParseTest.java:20)
+```
+
+
+* The other group's implementation's output:
+
+```
+ testLabFile3(MarkdownParseTest)
+java.lang.AssertionError: expected:<[https://ucsd-cse15l-w22.github.io/]> but was:<[]>
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.failNotEquals(Assert.java:835)
+	at org.junit.Assert.assertEquals(Assert.java:120)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at MarkdownParseTest.testLabFile3(MarkdownParseTest.java:34)
+
+```
+
+* Our program found every link and treated them as a link, while on common mark, the only link that was considered a link was the link that had enclosers that were both not on the line that the link content was on. I think that we shoudl fix this error by diregarding links *on a single line* with an enclosing parentheses; however, if both enclosing parentheses were on separate lines from the link above and below, then it could be considered as a link. 
 
 
 
