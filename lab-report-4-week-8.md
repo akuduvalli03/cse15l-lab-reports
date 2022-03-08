@@ -1,5 +1,9 @@
 # Lab Report Week 8: Debuggers
 
+### repositories:
+* [my repo](https://github.com/akuduvalli03/markdown-parse)
+* [other groups repo](https://github.com/bimai25/markdown-parse-brandon)
+
 ## Snippet 1: Backticks
 
 * the code should produce the following list:
