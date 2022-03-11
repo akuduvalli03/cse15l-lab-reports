@@ -48,7 +48,7 @@ while (openParenCount > 0 && closeParen < markdown.length()) {
 * the code assumes that the number of open and close parentheses are equal, which is consistent with the commonmark spec, **except** in the case where the parentheses is used as an escape character. If the program accounted for parentheses being used as part of the link text by the use of the backslash escape character, then it would work. 
 
 
-## First test file: `[link](<foo(and(bar)>)`
+## Second test file: `[link](<foo(and(bar)>)`
 
 * I created another file in the respective directories for my repository and the class one on `ieng6`: 
 
