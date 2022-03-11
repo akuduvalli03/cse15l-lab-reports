@@ -47,3 +47,72 @@ while (openParenCount > 0 && closeParen < markdown.length()) {
 
 * the code assumes that the number of open and close parentheses are equal, which is consistent with the commonmark spec, **except** in the case where the parentheses is used as an escape character. If the program accounted for parentheses being used as part of the link text by the use of the backslash escape character, then it would work. 
 
+
+## First test file: `[link](<foo(and(bar)>)`
+
+* I created another file in the respective directories for my repository and the class one on `ieng6`: 
+
+```md
+[link](<foo(and(bar)>)
+```
+
+* the output was the same for both my program and the class one (an empty list): 
+
+```
+[cs15lwi22aaw@ieng6-201]:lab5:105$ java MarkdownParse test-lab5-2.txt
+[]
+```
+
+```
+[cs15lwi22aaw@ieng6-201]:lab5mi:129$ java MarkdownParse3 test-lab5-2.txt
+[]
+```
+
+* neither implementation is correct because the **commonmark spec** provides the following output in html:
+
+```html
+<p><a href="foo(and(bar)">link</a></p>
+```
+
+* which is a link which content enclosed in **`<...>`**. 
+	
+* the error in the class file is in the following method again (as this is another issue with unbalanced parentheses)
+
+```java
+static int findCloseParen(String markdown, int openParen) {
+        int closeParen = openParen + 1;
+        int openParenCount = 1;
+        while (openParenCount > 0 && closeParen < markdown.length()) {
+            if (markdown.charAt(closeParen) == '(') {
+                openParenCount++;
+            } else if (markdown.charAt(closeParen) == ')') {
+                openParenCount--;
+            }
+            closeParen++;
+        }
+        if(openParenCount == 0) {
+          return closeParen - 1;
+        }
+        else {
+          return -1;
+        }
+
+    }
+```
+
+* Again, the class file does not account for the two exceptions in the **commonmark spec** for unbalanced parentheses, the second being when the parentheses are enclosed in the form `<...>`. 
+
+* This causes the method above to return `-1` since it counts an extra open parentheses, and this ends up causing the program to return an empty ArrayList since the call to `finfCloseParen()` yielded `-1`. 
+
+* to fix this error, the program should check for when a link has content enclosed within **`<...>`**. 
+ 
+
+
+
+
+
+
+
+
+
+
